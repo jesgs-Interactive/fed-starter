@@ -1,0 +1,45 @@
+@mixin make-vertical-spacing-classes(
+    $sub-class,
+    $factor: 1,
+    $vertical-spacing-iterations: 10
+) {
+    @for $size from 1 through $vertical-spacing-iterations {
+        @each $direction in "bottom", "top" {
+            @if ($factor == 1) {
+                .vm__#{$sub-class}--#{$direction}-#{$size} {
+                    margin-#{$direction}: $vertical-spacing * $size;
+                }
+
+                .vp__#{$sub-class}--#{$direction}-#{$size} {
+                    padding-#{$direction}: ($vertical-spacing * $size) * $factor;
+                }
+            } @else {
+                .vm__#{$sub-class}--#{$direction}-x#{$factor}-#{$size} {
+                    margin-#{$direction}: ($vertical-spacing * $size) * $factor;
+                }
+
+                .vp__#{$sub-class}--#{$direction}-x#{$factor}-#{$size} {
+                    padding-#{$direction}: ($vertical-spacing * $size) * $factor;
+                }
+            }
+        }
+    }
+}
+
+@include make-vertical-spacing-classes("xs");
+@include make-vertical-spacing-classes("xs", 10, 5);
+
+@media (min-width: $small-screen-min) {
+    @include make-vertical-spacing-classes("sm");
+    @include make-vertical-spacing-classes("sm", 10, 5);
+}
+
+@media (min-width: $medium-screen-min) {
+    @include make-vertical-spacing-classes("md");
+    @include make-vertical-spacing-classes("md", 10, 5);
+}
+
+@media (min-width: $large-screen-min) {
+    @include make-vertical-spacing-classes("lg");
+    @include make-vertical-spacing-classes("lg", 10, 5);
+}

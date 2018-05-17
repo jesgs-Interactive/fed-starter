@@ -1,0 +1,194 @@
+/**
+ * The grid system is loosely based on Bootstrap and uses some of the same naming conventions.
+ *
+ * @section Grids
+ * @page Structure
+ */
+/**
+ * Applies left/right padding and sets box-sizing to border-box on all column (col-*) classes
+ *
+ * @section Global column style
+ *
+ * @sectionof Grids
+ * @example
+ * <div class="col-xs-12">Full length column</div>
+ * @code {css}
+ * [class^="col-"]  {
+ *   padding: 0 #{$horizontal-spacing};
+ *   -webkit-box-sizing: border-box;
+ *   -moz-box-sizing: border-box;
+ *   box-sizing: border-box;
+ * }
+ */
+[class^="col-"] {
+    padding: 0 $horizontal-spacing;
+    @include box-sizing(border-box);
+    position: relative;
+}
+
+/**
+ * Container wraps row and columns. 100% for phones and small tablets. Fixed width for larger screens.
+ *
+ * @section Container class
+ *
+ * @sectionof Grids
+ * @example
+ * <div class="container">
+ *    <div class="row">
+ *        <div class="col-xs-12">Full length column</div>
+ *    </div>
+ * </div>
+ * @code {html}
+ * <div class="container">
+ *    <div class="row">
+ *        <div class="col-xs-12">Full length column</div>
+ *    </div>
+ * </div>
+ */
+.container {
+    @include box-sizing(border-box);
+    margin: 0 auto;
+    width: 100%;
+}
+
+/**
+ * Row class acts as a float-clear for columns nested inside
+ *
+ * @section Rows
+ *
+ * @sectionof Grids
+ * @example
+ * <div class="container">
+ *  <div class="row">
+ *      <div class="col-md-6">Col 1</div>
+ *      <div class="col-md-6">Col 2</div>
+ *  </div>
+ *  <div class="row">
+ *      <div class="col-md-9">Col 1</div>
+ *      <div class="col-md-3">Col 2</div>
+ *  </div>
+ * </div>
+ * @code {html}
+ * <div class="container">
+ *     <div class="row">
+ *         <div class="col-md-6">Col 1</div>
+ *         <div class="col-md-6">Col 2</div>
+ *     </div>
+ *     <div class="row">
+ *         <div class="col-md-9">Col 1</div>
+ *         <div class="col-md-3">Col 2</div>
+ *     </div>
+ * </div>
+ */
+.row {
+    clear: both;
+    float: none;
+
+    &:before,
+    &:after {
+        display: table;
+        content: " ";
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.col-inline {
+    float: none;
+    display: inline-block;
+}
+
+.col-block {
+    float: none !important;
+}
+
+.col-nopadding {
+    padding: 0;
+}
+
+/**
+ * Responsive column classes
+ *
+ * @section Columns
+ * @sectionof Grids
+ * @example
+ * <p>Column classes are .col-{breakpoint}-1 thru .col-{breakpoint}-#{$columns}</p>
+ *
+ * @code {css}
+ * .col-xxs-*
+ * .col-xs-*
+ * .col-sm-*
+ * .col-md-*
+ * .col-lg-*
+ */
+@for $c from 1 through $columns {
+    .col-xxs-#{$c} {
+        width: percentage($xxsmall-screen-min / $columns * $c / $xxsmall-screen-min);
+
+        @if $c != 12 {
+            float: left;
+        }
+    }
+}
+
+@include media-xs-min {
+    @for $c from 1 through $columns {
+        .col-xs-#{$c} {
+            width: percentage($xsmall-screen-min / $columns * $c / $xsmall-screen-min);
+
+            @if $c != 12 {
+                float: left;
+            }
+        }
+
+        .col-xs-offset-#{$c} {
+            margin-left: percentage($small-screen-min / $columns * $c / $small-screen-min);
+        }
+    }
+}
+
+@include media-sm-min {
+    @for $c from 1 through $columns {
+        .col-sm-#{$c} {
+            width: percentage($small-screen-min / $columns * $c / $small-screen-min);
+
+            @if $c != 12 {
+                float: left;
+            }
+        }
+
+        .col-sm-offset-#{$c} {
+            margin-left: percentage($small-screen-min / $columns * $c / $small-screen-min);
+        }
+    }
+}
+
+@include media-md-min {
+    @for $c from 1 through $columns {
+        .col-md-#{$c} {
+            width: percentage($medium-screen-min / $columns * $c / $medium-screen-min);
+
+            @if $c != 12 {
+                float: left;
+            }
+        }
+
+        .col-md-offset-#{$c} {
+            margin-left: percentage($small-screen-min / $columns * $c / $small-screen-min);
+        }
+    }
+}
+
+@include media-lg-min {
+    @for $c from 1 through $columns {
+        .col-lg-#{$c} {
+            width: percentage($large-screen-min / $columns * $c / $large-screen-min);
+
+            @if $c != 12 {
+                float: left;
+            }
+        }
+    }
+}

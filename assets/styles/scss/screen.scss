@@ -1,0 +1,125 @@
+@import url("https://use.typekit.net/laq0noo.css");
+@import "bourbon";
+@import "neat";
+@import "lib/index";
+/**
+ * Global Styling
+ * @section Global Styles
+ * @page index
+ */
+html {
+    margin: 0;
+    padding: 0;
+}
+/**
+ * Base font size: #{$font-size-base}<br />
+ * Base font face: Open Sans "#{$base-font}"
+ * @section Body Styles
+ * @sectionof Global Styles
+ * @page index
+ * @color {#{$background-color}} Background color - Global Styles.Body Styles
+ * @color {#{$text-color}} Text/Foreground color - Global Styles.Body Styles
+ */
+body {
+    background-color: $background-color;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * Hyperlink colors and styles
+ * @section Hyperlink Styles
+ * @sectionof Global Styles
+ * @page index
+ * @color {#{$color-accent-06}} Normal link state - Global Styles.Hyperlink Styles
+ * @color {#{$color-accent-07}} Visited link state - Global Styles.Hyperlink Styles
+ * @color {#{$color-accent-01}} Hover link state - Global Styles.Hyperlink Styles
+ * @color {#{$color-accent-04}} Active link state - Global Styles.Hyperlink Styles
+ */
+a {
+    &:link {
+        color: $color-accent-06;
+        text-decoration: none;
+    }
+
+    &:visited {
+        color: $color-accent-07;
+    }
+
+    &:hover {
+        color: $color-accent-01;
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: $color-accent-04;
+    }
+}
+
+/**
+ * Heading styles
+ *
+ * All HTML headings, `<h1>` through `<h6>`, are available. `.h1` through `.h6` classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.
+ *
+ * @section Heading Styles
+ * @page index
+ * @example
+ * <h1>h1. heading</h1>
+ * <hr>
+ * <h2>h2. heading</h2>
+ * <hr>
+ * <h3>h3. heading</h3>
+ * <hr>
+ * <h4>h4. heading</h4>
+ * <hr>
+ * <h5>h5. heading</h5>
+ * <hr>
+ * <h6>h6. heading</h6>
+ *
+ * @code
+ * <h1>h1. heading</h1>
+ * <h2>h2. heading</h2>
+ * <h3>h3. heading</h3>
+ * <h4>h4. heading</h4>
+ * <h5>h5. heading</h5>
+ * <h6>h6. heading</h6>
+ */
+h, .h {
+    &1, &2, &3, &4, &5, &6 {
+        font-family: $header-font;
+        font-weight: 900;
+        color: $color-accent-06;
+        margin-bottom: 0.5em;
+    }
+
+    &1 {
+        font-size: $font-size-xxl;
+    }
+
+    &2 {
+        font-size: $font-size-xl;
+    }
+
+    &3 {
+        font-size: $font-size-l;
+        margin-bottom: 20px;
+    }
+
+    &4 {
+        font-size: $font-size-base;
+    }
+
+    &5 {
+        font-size: $font-size-sm;
+    }
+
+    &6 {
+        font-size: $font-size-xs;
+    }
+
+    &4, &5, &6 {
+        letter-spacing: 0.025em;
+        margin-bottom: 20px;
+    }
+}

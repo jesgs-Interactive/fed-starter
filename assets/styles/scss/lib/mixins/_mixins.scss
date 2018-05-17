@@ -1,0 +1,36 @@
+@mixin gradient($start, $type: linear, $color-positions...) {
+    @if ($type == linear) {
+        background: linear-gradient(to $start, $color-positions);
+    } @else {
+        background: radial-gradient($start, $color-positions);
+    }
+}
+
+@mixin transform($options) {
+    -webkit-transform: $options;
+    -moz-transform: $options;
+    -ms-transform: $options;
+    -o-transform: $options;
+    transform: $options;
+}
+
+@mixin box-sizing($box-model) {
+    @if ($box-model == '') {
+        $box-model: border-box;
+    }
+
+    -webkit-box-sizing: $box-model; // Safari <= 5
+    -moz-box-sizing: $box-model; // Firefox <= 19
+    box-sizing: $box-model;
+}
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
