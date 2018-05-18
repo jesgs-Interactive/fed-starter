@@ -9640,6 +9640,168 @@ h4, h5, h6, .h4, .h5, .h6 {
   margin-bottom: 20px;
 }
 
+/**
+ * Horizontal list classes
+ *
+ * @section Horizontal list classes
+ * @page index
+ *
+ * @example
+ * <ul class="hlist">
+ *  <li>Item 1</li>
+ *  <li>Item 2</li>
+ * </ul>
+ *
+ * @code {html}
+ * <ul class="hlist">
+ *  <li>Item 1</li>
+ *  <li>Item 2</li>
+ * </ul>
+ */
+/**
+ * @section Horizontal list class w/ divider
+ * @page index
+ * @example
+ * <ul class="hlist--nav">
+ *  <li>Item 1</li>
+ *  <li>Item 2</li>
+ * </ul>
+ *
+ * @code {html}
+ * <ul class="hlist--nav">
+ *  <li>Item 1</li>
+ *  <li>Item 2</li>
+ * </ul>
+ */
+.hlist > li {
+  display: inline-block;
+}
+
+.hlist--nav > li {
+  display: inline-block;
+}
+
+.hlist--nav > li + li {
+  margin-left: 10px;
+}
+
+.hlist--nav > li + li:before {
+  display: inline-block;
+  margin-right: 10px;
+  content: "|";
+}
+
+/**
+ * Screen-reader-only Class. Use to hide text from screen-readers
+ * @section Screen-reader-only Class
+ * @page index
+ * @example
+ *  .sr-only
+ * @code {html}
+ *  <span class="sr-only">Hidden text</span>
+ */
+.sr-only {
+  display: none;
+}
+
+/**
+ * Pull-classes. Use to "pull" containers to left or right without using col-* classes. Wrap the
+ * two columns in a container using the <code>.row</code> class to clear floats.
+ * @section Pull classes
+ * @page index
+ * @example
+ * <div class="container">
+ *  Not pulled
+ * </div>
+ * <div class="container">
+ *  <div class="row">
+ *      <div class="pull-left">Pulled left</div>
+ *      <div class="pull-right">Pulled right</div>
+ *  </div>
+ * </div>
+ * @code {html}
+ *  <div class="container">
+ *  Not pulled
+ *      <div class="pull-left">Pulled left</div>
+ *  </div>
+ */
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+/**
+ * Visibility classes
+ * @section Visibility classes
+ * @page index
+ * @example
+ * <div class="container">
+ *     Resize the screen to see these examples in action
+ *     <div class="visible-xxs">0. Only visible on screen sizes smaller than 479px</div>
+ *     <div class="visible-xs">1. Only visible on screen sizes between 480px and 767px</div>
+ *     <div class="visible-sm">2. Only visible on screen sizes between 768px and 991px</div>
+ *     <div class="visible-md">3. Only visible on screen sizes between 992px and 1199px</div>
+ *     <div class="visible-lg">4. Only visible on screen sizes larger than 1200px</div>
+ * </div>
+ * @code {html}
+ * <div class="container">
+ *     <div class="visible-xxs">0. Only visible on screen sizes smaller than 479px</div>
+ *     <div class="visible-xs">1. Only visible on screen sizes between 480px and 767px</div>
+ *     <div class="visible-sm">2. Only visible on screen sizes between 768px and 991px</div>
+ *     <div class="visible-md">3. Only visible on screen sizes between 992px and 1199px</div>
+ *     <div class="visible-lg">4. Only visible on screen sizes larger than 1200px</div>
+ * </div>
+ */
+/* visible/invisible classes */
+.visible-xxs,
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
+  display: none !important;
+}
+
+@media (max-width: 479px) {
+  .visible-xxs {
+    display: block !important;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .visible-xs {
+    display: block !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm {
+    display: block !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .visible-md {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .visible-lg {
+    display: block !important;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+cite, em {
+  font-style: italic;
+}
+
 /*# sourceMappingURL=screen.css.map */
 
 
@@ -9793,6 +9955,88 @@ Base font face: Open Sans &quot;open-sans, sans-serif&quot;</p></div>
 &lt;h6&gt;h6. heading&lt;/h6&gt;</code></pre>
 </div>
             </article>
+            <article class="livingcss__article" id="horizontal-list-classes">
+                <h1 class="livingcss__article-title">Horizontal list classes</h1><div class="livingcss__section-description"><p>Horizontal list classes</p></div>
+
+<livingcss-example><ul class="hlist">
+ <li>Item 1</li>
+ <li>Item 2</li>
+</ul></livingcss-example>
+
+<div class="livingcss__section-markup">
+  <pre class="livingcss__section-code"><code class="language-html">&lt;ul class&#x3D;&quot;hlist&quot;&gt;
+ &lt;li&gt;Item 1&lt;/li&gt;
+ &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</div>
+            </article>
+            <article class="livingcss__article" id="horizontal-list-class-w%2F-divider">
+                <h1 class="livingcss__article-title">Horizontal list class w/ divider</h1><div class="livingcss__section-description"></div>
+
+<livingcss-example><ul class="hlist--nav">
+ <li>Item 1</li>
+ <li>Item 2</li>
+</ul></livingcss-example>
+
+<div class="livingcss__section-markup">
+  <pre class="livingcss__section-code"><code class="language-html">&lt;ul class&#x3D;&quot;hlist--nav&quot;&gt;
+ &lt;li&gt;Item 1&lt;/li&gt;
+ &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</div>
+            </article>
+            <article class="livingcss__article" id="screen-reader-only-class">
+                <h1 class="livingcss__article-title">Screen-reader-only Class</h1><div class="livingcss__section-description"><p>Screen-reader-only Class. Use to hide text from screen-readers</p></div>
+
+<livingcss-example>.sr-only</livingcss-example>
+
+<div class="livingcss__section-markup">
+  <pre class="livingcss__section-code"><code class="language-html">&lt;span class&#x3D;&quot;sr-only&quot;&gt;Hidden text&lt;/span&gt;</code></pre>
+</div>
+            </article>
+            <article class="livingcss__article" id="pull-classes">
+                <h1 class="livingcss__article-title">Pull classes</h1><div class="livingcss__section-description"><p>Pull-classes. Use to &quot;pull&quot; containers to left or right without using col-* classes. Wrap the
+two columns in a container using the <code>.row</code> class to clear floats.</p></div>
+
+<livingcss-example><div class="container">
+ Not pulled
+</div>
+<div class="container">
+ <div class="row">
+     <div class="pull-left">Pulled left</div>
+     <div class="pull-right">Pulled right</div>
+ </div>
+</div></livingcss-example>
+
+<div class="livingcss__section-markup">
+  <pre class="livingcss__section-code"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+ Not pulled
+     &lt;div class&#x3D;&quot;pull-left&quot;&gt;Pulled left&lt;/div&gt;
+ &lt;/div&gt;</code></pre>
+</div>
+            </article>
+            <article class="livingcss__article" id="visibility-classes">
+                <h1 class="livingcss__article-title">Visibility classes</h1><div class="livingcss__section-description"><p>Visibility classes</p></div>
+
+<livingcss-example><div class="container">
+    Resize the screen to see these examples in action
+    <div class="visible-xxs">0. Only visible on screen sizes smaller than 479px</div>
+    <div class="visible-xs">1. Only visible on screen sizes between 480px and 767px</div>
+    <div class="visible-sm">2. Only visible on screen sizes between 768px and 991px</div>
+    <div class="visible-md">3. Only visible on screen sizes between 992px and 1199px</div>
+    <div class="visible-lg">4. Only visible on screen sizes larger than 1200px</div>
+</div></livingcss-example>
+
+<div class="livingcss__section-markup">
+  <pre class="livingcss__section-code"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;div class&#x3D;&quot;visible-xxs&quot;&gt;0. Only visible on screen sizes smaller than 479px&lt;/div&gt;
+    &lt;div class&#x3D;&quot;visible-xs&quot;&gt;1. Only visible on screen sizes between 480px and 767px&lt;/div&gt;
+    &lt;div class&#x3D;&quot;visible-sm&quot;&gt;2. Only visible on screen sizes between 768px and 991px&lt;/div&gt;
+    &lt;div class&#x3D;&quot;visible-md&quot;&gt;3. Only visible on screen sizes between 992px and 1199px&lt;/div&gt;
+    &lt;div class&#x3D;&quot;visible-lg&quot;&gt;4. Only visible on screen sizes larger than 1200px&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+            </article>
 
         </main>
 
@@ -9800,6 +10044,11 @@ Base font face: Open Sans &quot;open-sans, sans-serif&quot;</p></div>
             <div class="livingcss__nav-container">
                 <a class="livingcss__nav-link" href="#global-styles">Global Styles</a>
                 <a class="livingcss__nav-link" href="#heading-styles">Heading Styles</a>
+                <a class="livingcss__nav-link" href="#horizontal-list-classes">Horizontal list classes</a>
+                <a class="livingcss__nav-link" href="#horizontal-list-class-w%2F-divider">Horizontal list class w/ divider</a>
+                <a class="livingcss__nav-link" href="#screen-reader-only-class">Screen-reader-only Class</a>
+                <a class="livingcss__nav-link" href="#pull-classes">Pull classes</a>
+                <a class="livingcss__nav-link" href="#visibility-classes">Visibility classes</a>
             </div>
         </nav>
 
