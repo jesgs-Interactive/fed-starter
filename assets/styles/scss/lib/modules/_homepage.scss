@@ -1,0 +1,70 @@
+/**
+ * Homepage Modules
+ *
+ * @page Homepage Modules
+ * @section Homepage Modules
+ */
+.module {
+    width: 100%;
+    min-height: 100vw;
+
+    &--collapsed {
+        min-height: inherit;
+    }
+
+    &--half {
+        min-height: 50vw;
+    }
+
+    &--quarter {
+        min-height: 25vw;
+    }
+
+    /**
+     * Introduction Module
+     * @section Intro Module
+     * @page Homepage Modules
+     * @example {html}
+     * <div class="module module__intro">&nbsp;</div>
+     */
+    &__intro {
+        background: $color-base-2 url('../assets/images/intro-bg.png') center 40px no-repeat;
+        border-bottom: 20px solid mix($color-base-2, $color-base-0, 75);
+    }
+
+    /**
+     * Work Module
+     * @section Work Module
+     * @page Homepage Modules
+     * @example {html}
+     * <div class="module module--quarter module__work">&nbsp;</div>
+     */
+    &__work {
+        background: tint($color-accent-06, 25) url('../assets/images/work-bg.png') center 40px no-repeat;
+        border-bottom: 20px solid $color-accent-06;
+    }
+
+    /**
+     * About Module
+     * @section About Module
+     * @page Homepage Modules
+     * @example {html}
+     * <div class="module module--half module__about">&nbsp;</div>
+     */
+    &__about {
+        background: $color-base-1 url('../assets/images/about-bg.png') center 40px no-repeat;
+        border-bottom: 20px solid $color-base-0;
+    }
+
+    /**
+     * Contact Module
+     * @section Contact Module
+     * @page Homepage Modules
+     * @example {html}
+     * <div class="module module--half module__contact">&nbsp;</div>
+     */
+    &__contact {
+        background: tint($color-accent-07, 25) url('../assets/images/contact-bg.png') center 40px no-repeat;
+        border-bottom: 20px solid $color-accent-07;
+    }
+}

@@ -9522,6 +9522,77 @@ this.fire('dom-change');
 }
 
 /**
+ * Homepage Modules
+ *
+ * @page Homepage Modules
+ * @section Homepage Modules
+ */
+.module {
+  width: 100%;
+  min-height: 100vw;
+  /**
+     * Introduction Module
+     * @section Intro Module
+     * @page Homepage Modules
+     * @example {html}
+     * <div class="module module__intro">&nbsp;</div>
+     */
+  /**
+     * Work Module
+     * @section Work Module
+     * @page Homepage Modules
+     * @example {html}
+     * <div class="module module--quarter module__work">&nbsp;</div>
+     */
+  /**
+     * About Module
+     * @section About Module
+     * @page Homepage Modules
+     * @example {html}
+     * <div class="module module--half module__about">&nbsp;</div>
+     */
+  /**
+     * Contact Module
+     * @section Contact Module
+     * @page Homepage Modules
+     * @example {html}
+     * <div class="module module--half module__contact">&nbsp;</div>
+     */
+}
+
+.module--collapsed {
+  min-height: inherit;
+}
+
+.module--half {
+  min-height: 50vw;
+}
+
+.module--quarter {
+  min-height: 25vw;
+}
+
+.module__intro {
+  background: #eee8d5 url("../assets/images/intro-bg.png") center 40px no-repeat;
+  border-bottom: 20px solid #d3d3c5;
+}
+
+.module__work {
+  background: #5ca8dd url("../assets/images/work-bg.png") center 40px no-repeat;
+  border-bottom: 20px solid #268bd2;
+}
+
+.module__about {
+  background: #93a1a1 url("../assets/images/about-bg.png") center 40px no-repeat;
+  border-bottom: 20px solid #839496;
+}
+
+.module__contact {
+  background: #5fb9b2 url("../assets/images/contact-bg.png") center 40px no-repeat;
+  border-bottom: 20px solid #2aa198;
+}
+
+/**
  * Global Styling
  * @section Global Styles
  * @page index
@@ -9862,6 +9933,7 @@ cite, em {
         <div class="livingcss__main-nav-container">
             <nav class="livingcss__container livingcss__main-nav">
                 <a class="livingcss__nav-link livingcss__nav-link--main " href="index.html">index</a>
+                <a class="livingcss__nav-link livingcss__nav-link--main " href="homepage-modules.html">Homepage Modules</a>
                 <a class="livingcss__nav-link livingcss__nav-link--main livingcss__nav-link--active" href="structure.html">Structure</a>
                 <a class="livingcss__nav-link livingcss__nav-link--main " href="colors.html">Colors</a>
             </nav>
