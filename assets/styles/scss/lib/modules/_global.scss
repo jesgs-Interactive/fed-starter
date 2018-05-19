@@ -109,8 +109,8 @@
      * <footer class="main-footer main-footer--blog">
      *     <nav class="main-footer__navbar col-inline col-md-offset-1 col-md-6">
      *         <ul class="hlist">
-     *             <li><i class="fas fa-rss"></i><a href="#">RSS</a></li>
-     *             <li><i class="fab fa-github-alt"></i><a href="#">Github</a></li>
+     *             <li><a href="#"><i class="hlist__icon fas fa-rss"></i><span class="hlist__label">RSS</span></a></li>
+     *             <li><a href="#"><i class="hlist__icon fab fa-github-alt"></i><span class="hlist__label">Github</span></a></li>
      *         </ul>
      *         <small class="copyright row">&copy; 2018 Jessica Green All Rights Reserved</small>
      *     </nav>
@@ -135,13 +135,24 @@
         @extend .main-header__logo
     }
 
-    &__navbar {
+    &--blog {
+        font-size: $font-size-base;
+    }
+
+    &--portfolio {
         font-size: 24px;
+    }
+
+    &__navbar {
         font-weight: lighter;
 
         a {
             &:link {
                 color: $color-base-3;
+            }
+
+            &:hover {
+                color: tint($color-accent-01, 75);
             }
         }
     }

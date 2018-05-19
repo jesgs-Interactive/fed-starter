@@ -186,6 +186,17 @@ h, .h {
             }
         }
     }
+
+    &__icon {
+        font-size: 24px;
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+
+    &__label {
+        display: inline-block;
+        vertical-align: middle;
+    }
 }
 
 /**
@@ -301,4 +312,8 @@ strong {
 
 cite, em {
     font-style: italic;
+}
+
+code, pre {
+    font: $font-size-base $code-font;
 }
