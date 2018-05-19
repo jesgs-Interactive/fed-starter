@@ -1,4 +1,5 @@
 @import url("https://use.typekit.net/laq0noo.css");
+@import "../../../node_modules/normalize.css/normalize.css";
 @import "bourbon";
 @import "neat";
 @import "lib/index";
@@ -124,11 +125,15 @@ h, .h {
     }
 }
 
-
+/**
+ * @section Utility Classes
+ * @page index
+ */
 /**
  * Horizontal list classes
  *
  * @section Horizontal list classes
+ * @sectionof Utility Classes
  * @page index
  *
  * @example
@@ -145,6 +150,7 @@ h, .h {
  */
 /**
  * @section Horizontal list class w/ divider
+ * @sectionof Utility Classes
  * @page index
  * @example
  * <ul class="hlist--nav">
@@ -181,8 +187,9 @@ h, .h {
 }
 
 /**
- * Screen-reader-only Class. Use to hide text from screen-readers
- * @section Screen-reader-only Class
+ * Screen-reader only class. Use to hide text from screen-readers
+ * @sectionof Utility Classes
+ * @section Screen-reader only Class
  * @page index
  * @example
  *  .sr-only
@@ -212,6 +219,7 @@ h, .h {
  *  <div class="container">
  *  Not pulled
  *      <div class="pull-left">Pulled left</div>
+ *      <div class="pull-right">Pulled right</div>
  *  </div>
  */
 .pull {
