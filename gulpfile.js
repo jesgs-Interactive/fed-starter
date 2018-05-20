@@ -4,11 +4,28 @@ const sass = require('gulp-sass');
 const cssmin = require('gulp-cssmin');
 const rename = require('gulp-rename');
 const livingcss = require('gulp-livingcss');
+const sassImage = require('gulp-sass-image');
 const bourbon = require("bourbon").includePaths;
-const neat = require("bourbon-neat").includePaths;
+const normalize = require('node-normalize-scss').includePaths;
 
-const scssAssetPath = 'assets/styles/scss/**/*.scss';
+const scssAssetPath = [
+    'assets/styles/scss/**/*.scss',
+    '!assets/styles/scss/lib/mixins/vendor/_imagehelper.scss'
+];
+
 const destCssAssetPath = 'assets/styles/';
+
+gulp.task('sass-image', function () {
+    return gulp.src('assets/images/**/*.+(jpeg|jpg|png|gif|svg)')
+        .pipe(sassImage({
+            targetFile: '_imagehelper.scss', // default target filename is '_sass-image.scss'
+            // template: 'your-sass-image-template.mustache',
+            images_path: 'assets/images/',
+            css_path: 'assets/styles/',
+            prefix: 'icon-'
+        }))
+        .pipe(gulp.dest(`${destCssAssetPath}/scss/lib/mixins/vendor`));
+});
 
 gulp.task('sass', () => {
     return gulp.src(scssAssetPath)
@@ -16,7 +33,10 @@ gulp.task('sass', () => {
         .pipe(sass({
             sourcemaps: true,
             outputStyle: 'expanded',
-            includePaths: [bourbon, neat]
+            includePaths: [
+                bourbon,
+                normalize
+            ]
         }).on('error', sass.logError))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(destCssAssetPath));
@@ -25,6 +45,7 @@ gulp.task('sass', () => {
 gulp.task('styleguide', () => {
     return gulp.src(`${destCssAssetPath}screen.css`)
         .pipe(livingcss(`${destCssAssetPath}screen.css`, {
+            loadcss: false,
             preprocess: function(context, template, Handlebars) {
                 context.title = 'JessGreen.io Style Guide';
             },
@@ -60,7 +81,7 @@ gulp.task('cssmin', () => {
 });
 
 gulp.task('watch', () => {
-    gulp.watch(scssAssetPath, gulp.series('sass', 'cssmin', 'styleguide'));
+    gulp.watch(scssAssetPath, gulp.series('sass-image', 'sass', 'cssmin', 'styleguide'));
 });
 
 gulp.task('compile', gulp.series('sass', 'cssmin', function(done) {

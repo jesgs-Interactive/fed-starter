@@ -125,7 +125,7 @@
     height: 160px;
     @include box-sizing(border-box);
     color: $color-base-3;
-    background: $color-base-03 url('../assets/images/cars.png') bottom 0 right 20px no-repeat;
+    background: $color-base-03 image-url('cars.png') bottom 0 right 20px no-repeat;
 
     small {
         display: block;

@@ -56,7 +56,7 @@
      * </section>
      */
     &__intro {
-        background: $color-base-2 url('../assets/images/intro-bg.png') center 10px no-repeat;
+        background: $color-base-2 image-url('intro-bg.png') center 10px no-repeat;
         border-bottom: 20px solid mix($color-base-2, $color-base-0, 75);
         text-align: center;
         &__logo {
@@ -100,7 +100,7 @@
      * </section>
      */
     &__work {
-        background: tint($color-accent-06, 25) url('../assets/images/work-bg.png') center 40px no-repeat;
+        background: tint($color-accent-06, 25) image-url('work-bg.png') center 40px no-repeat;
         border-bottom: 20px solid $color-accent-06;
     }
 
@@ -117,7 +117,7 @@
      * </section>
      */
     &__about {
-        background: $color-base-1 url('../assets/images/about-bg.png') center 40px no-repeat;
+        background: $color-base-1 image-url('about-bg.png') center 40px no-repeat;
         border-bottom: 20px solid $color-base-0;
     }
 
@@ -155,7 +155,7 @@
      * </section>
      */
     &__contact {
-        background: tint($color-accent-07, 25) url('../assets/images/contact-bg.png') center 40px no-repeat;
+        background: tint($color-accent-07, 25) image-url('contact-bg.png') center 40px no-repeat;
         border-bottom: 20px solid $color-accent-07;
     }
 }
