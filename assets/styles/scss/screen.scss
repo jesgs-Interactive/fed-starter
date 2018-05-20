@@ -93,7 +93,7 @@ h, .h {
         font-family: $header-font;
         font-weight: 900;
         line-height: 1;
-        color: $color-accent-06;
+        color: $color-base-03;
         margin: 0 0 0.5em;
     }
 
@@ -173,6 +173,18 @@ h, .h {
     > li {
         flex: 1 100%;
     }
+    &--icon-list {
+        a {
+            &:link,
+            &:visited {
+                color: $color-base-2;
+            }
+
+            &:hover {
+                color: $color-accent-07;
+            }
+        }
+    }
 
     &--nav {
         > li + li {
@@ -188,14 +200,27 @@ h, .h {
     }
 
     &__icon {
-        font-size: 24px;
         margin-right: 5px;
         vertical-align: middle;
+        &--normal {
+            font-size: 24px;
+        }
+
+        &--x2 {
+            font-size: 48px;
+        }
+
+        &--x3 {
+            font-size: 72px;
+        }
     }
 
     &__label {
         display: inline-block;
         vertical-align: middle;
+        &--hidden {
+            display: none;
+        }
     }
 }
 
