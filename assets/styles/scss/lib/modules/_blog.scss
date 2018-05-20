@@ -8,28 +8,35 @@
  * @section Article Listing
  * @page Blog Elements
  * @example {html}
- * <section class="article-listing">
- *     <div class="entry">
- *         <h2 class="entry__title"><a href="#" class="entry__bookmark" rel="bookmark">Lorem Ipsum Dolor Sit Amet</a></h2>
- *         <p class="entry__summary">
- *             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat erat in finibus hendrerit. Etiam ornare erat elit, ac mollis neque gravida quis. In ut nunc ut justo varius tempor&hellip;
- *         </p>
- *         <div class="entry__meta">May 9th, 2018 @ 10:15pm</div>
- *     </div>
- *     <div class="entry">
- *         <h2 class="entry__title"><a href="#" class="entry__bookmark" rel="bookmark">Lorem Ipsum Dolor Sit Amet</a></h2>
- *         <p class="entry__summary">
- *             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat erat in finibus hendrerit. Etiam ornare erat elit, ac mollis neque gravida quis. In ut nunc ut justo varius tempor&hellip;
- *         </p>
- *         <div class="entry__meta">May 9th, 2018 @ 10:15pm</div>
- *     </div>
- *     <ul class="article-listing__navigation row">
- *         <li class="pull-left"><a href="#">&laquo; Prev</a></li>
- *         <li class="pull-right"><a href="#">Next &raquo;</a></li>
- *     </ul>
- * </section>
+   <main class="row">
+       <section class="article-listing col-md-8 col-md-offset-2">
+         <article class="entry">
+             <header class="entry__header">
+                 <h2 class="entry__title"><a href="#" class="entry__bookmark" rel="bookmark">Lorem Ipsum Dolor Sit Amet</a></h2>
+             </header>
+             <p class="entry__summary">
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat erat in finibus hendrerit. Etiam ornare erat elit, ac mollis neque gravida quis. In ut nunc ut justo varius tempor&hellip;
+             </p>
+             <div class="entry__meta">May 9th, 2018 @ 10:15pm</div>
+         </article>
+         <article class="entry">
+             <header class="entry__header">
+                 <h2 class="entry__title"><a href="#" class="entry__bookmark" rel="bookmark">Lorem Ipsum Dolor Sit Amet</a></h2>
+             </header>
+             <p class="entry__summary">
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat erat in finibus hendrerit. Etiam ornare erat elit, ac mollis neque gravida quis. In ut nunc ut justo varius tempor&hellip;
+             </p>
+             <div class="entry__meta">May 9th, 2018 @ 10:15pm</div>
+         </article>
+         <ul class="article-listing__navigation row">
+             <li class="pull-left"><a href="#">&laquo; Prev</a></li>
+             <li class="pull-right"><a href="#">Next &raquo;</a></li>
+         </ul>
+       </section>
+   </main>
  */
 .article-listing {
+    padding: 40px 0;
     &__navigation {
         list-style: none;
         padding: 0;
@@ -50,39 +57,43 @@
  * @section Article Single View
  * @page Blog Elements
  * @example {html}
- * <section class="article-listing">
- *     <div class="entry">
- *         <h2 class="entry__title"><a href="#" class="entry__bookmark" rel="bookmark">Lorem Ipsum Dolor Sit Amet</a></h2>
- *         <div class="entry__meta">May 9th, 2018 @ 10:15pm</div>
- *         <div class="entry__content">
- *             <p>
- *                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
- *                 laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
- *                 ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
- *                 in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at
- *                 vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis
- *                 dolore te feugait nulla facilisi.
- *             </p>
- *             <p>
- *                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
- *                 laoreet dolore magna aliquam erat volutpat.
- *             </p>
- *             <p>
- *                 Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
- *                 ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
- *                 consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
- *                 qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
- *             </p>
- *         </div>
- *         <div class="entry__meta">
- *             Article published on May 9th, 2018 @ 10:15pm, tagged <a href="#">#LoremIpsum</a> by Jess G
- *         </div>
- *     </div>
- *     <ul class="article-listing__navigation--single row">
- *         <li class="pull-left"><a href="#">&laquo; Previous Article</a></li>
- *         <li class="pull-right"><a href="#">Next Article &raquo;</a></li>
- *     </ul>
- * </section>
+   <main class="row">
+      <section class="article-listing col-md-8 col-md-offset-2">
+          <article class="entry">
+              <header class="entry__header">
+                  <h2 class="entry__title"><a href="#" class="entry__bookmark" rel="bookmark">Lorem Ipsum Dolor Sit Amet</a></h2>
+                  <div class="entry__meta">May 9th, 2018 @ 10:15pm</div>
+              </header>
+              <div class="entry__content">
+                  <p>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                      laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                      ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
+                      in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+                      vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis
+                      dolore te feugait nulla facilisi.
+                  </p>
+                  <p>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                      laoreet dolore magna aliquam erat volutpat.
+                  </p>
+                  <p>
+                      Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+                      ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+                      consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
+                      qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                  </p>
+              </div>
+              <aside class="entry__meta">
+                  Article published on May 9th, 2018 @ 10:15pm, tagged <a href="#">#LoremIpsum</a> by Jess G
+              </aside>
+          </article>
+          <ul class="article-listing__navigation--single row">
+              <li class="pull-left"><a href="#">&laquo; Previous Article</a></li>
+              <li class="pull-right"><a href="#">Next Article &raquo;</a></li>
+          </ul>
+      </section>
+  </main>
  */
 .entry {
     & + & {
