@@ -5,7 +5,6 @@
  * @section Homepage Modules
  */
 .module {
-    width: 100%;
     min-height: 100vw;
     padding: 40px 0;
     color: $color-base-03;
@@ -27,33 +26,37 @@
      * @section Intro Module
      * @page Homepage Modules
      * @example {html}
-     * <div class="container">
-     *     <section id="intro" class="module module__intro module--collapsed">
-     *         <div class="row">
-     *             <img src="../assets/images/logo.png" alt="" class="module__intro__logo" />
-     *         </div>
-     *         <div class="row">
-     *             <div class="module__lead module__intro__lead col-md-offset-3 col-md-6">
-     *                 <div class="module__lead__text module__lead__text--intro ">Hello, my name is</div>
-     *                 <h2 class="module__lead__header module__lead__header--intro">Jess Green</h2>
-     *                 <div class="module__lead__text module__lead__text--intro">I&apos;m a freelance web designer/developer located in the Greater Twin Cities area.</div>
-     *             </div>
-     *         </div>
-     *     </section>
-     * </div>
+       <div class="container">
+          <section id="intro" class="row module module__intro module--collapsed">
+              <div class="container">
+                  <div class="row">
+                      <img src="../assets/images/logo.png" alt="" class="module__intro__logo" />
+                  </div>
+                  <div class="row">
+                      <div class="module__lead module__intro__lead col-md-offset-3 col-md-6">
+                          <div class="module__lead__text module__lead__text--intro ">Hello, my name is</div>
+                          <h2 class="module__lead__header module__lead__header--intro">Jess Green</h2>
+                          <div class="module__lead__text module__lead__text--intro">I&apos;m a freelance web designer/developer located in the Greater Twin Cities area.</div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+       </div>
      * @code {html}
-     * <section id="intro" class="module module__intro module--collapsed">
-     *     <div class="row">
-     *         <img src="../assets/images/logo.png" alt="" class="module__intro__logo" />
-     *     </div>
-     *     <div class="row">
-     *         <div class="module__lead module__intro__lead col-md-offset-3 col-md-6">
-     *             <div class="module__lead__text module__lead__text--intro ">Hello, my name is</div>
-     *             <h2 class="module__lead__header module__lead__header--intro">Jess Green</h2>
-     *             <div class="module__lead__text module__lead__text--intro">I&apos;m a freelance web designer/developer located in the Greater Twin Cities area.</div>
-     *         </div>
-     *     </div>
-     * </section>
+     <section id="intro" class="row module module__intro module--collapsed">
+         <div class="container">
+             <div class="row">
+                 <img src="../assets/images/logo.png" alt="" class="module__intro__logo" />
+             </div>
+             <div class="row">
+                 <div class="module__lead module__intro__lead col-md-offset-3 col-md-6">
+                     <div class="module__lead__text module__lead__text--intro ">Hello, my name is</div>
+                     <h2 class="module__lead__header module__lead__header--intro">Jess Green</h2>
+                     <div class="module__lead__text module__lead__text--intro">I&apos;m a freelance web designer/developer located in the Greater Twin Cities area.</div>
+                 </div>
+             </div>
+         </div>
+     </section>
      */
     &__intro {
         background: $color-base-2 image-url('intro-bg.png') center 10px no-repeat;
@@ -92,12 +95,25 @@
      * @section Work Module
      * @page Homepage Modules
      * @example {html}
-     * <section id="work" class="module module--quarter module__work">
-     *     <div class="module__lead row">
-     *         <h2 class="module__lead__header">Work</h2>
-     *         <div class="module__lead__text col-md-8 col-md-offset-2">I&apos;ve worked for over 8 years in the industry, building user-friendly websites. I&apos;ll work with you as the client to discover what your web design/development needs are.</div>
-     *     </div>
-     * </section>
+     <div class="container">
+         <section id="work" class="row module module--quarter module__work">
+             <div class="container">
+                 <div class="module__lead row">
+                     <h2 class="module__lead__header">Work</h2>
+                     <div class="module__lead__text col-md-8 col-md-offset-2">I&apos;ve worked for over 8 years in the industry, building user-friendly websites. I&apos;ll work with you as the client to discover what your web design/development needs are.</div>
+                 </div>
+             </div>
+         </section>
+     </div>
+     * @code {html}
+     <section id="work" class="row module module--quarter module__work">
+         <div class="container">
+             <div class="module__lead row">
+                 <h2 class="module__lead__header">Work</h2>
+                 <div class="module__lead__text col-md-8 col-md-offset-2">I&apos;ve worked for over 8 years in the industry, building user-friendly websites. I&apos;ll work with you as the client to discover what your web design/development needs are.</div>
+             </div>
+         </div>
+     </section>
      */
     &__work {
         background: tint($color-accent-06, 25) image-url('work-bg.png') center 40px no-repeat;
@@ -109,12 +125,25 @@
      * @section About Module
      * @page Homepage Modules
      * @example {html}
-     * <section id="about" class="module module--quarter module__about">
-     *     <div class="module__lead row">
-     *         <h2 class="module__lead__header">About</h2>
-     *         <div class="module__lead__text col-md-8 col-md-offset-2">I&apos;m a highly motivated programmer/web developer with extensive experience in the industry. I&apos;m committed to building websites that conform to web accessibility and usability standards, while maintaining visual and aesthetic appeal.</div>
-     *     </div>
-     * </section>
+     <div class="container">
+         <section id="about" class="row module module--quarter module__about">
+             <div class="container">
+                 <div class="module__lead row">
+                     <h2 class="module__lead__header">About</h2>
+                     <div class="module__lead__text col-md-8 col-md-offset-2">I&apos;m a highly motivated programmer/web developer with extensive experience in the industry. I&apos;m committed to building websites that conform to web accessibility and usability standards, while maintaining visual and aesthetic appeal.</div>
+                 </div>
+             </div>
+         </section>
+     </div>
+     * @code {html}
+     <section id="about" class="row module module--quarter module__about">
+         <div class="container">
+             <div class="module__lead row">
+                 <h2 class="module__lead__header">About</h2>
+                 <div class="module__lead__text col-md-8 col-md-offset-2">I&apos;m a highly motivated programmer/web developer with extensive experience in the industry. I&apos;m committed to building websites that conform to web accessibility and usability standards, while maintaining visual and aesthetic appeal.</div>
+             </div>
+         </div>
+     </section>
      */
     &__about {
         background: $color-base-1 image-url('about-bg.png') center 40px no-repeat;
@@ -126,33 +155,67 @@
      * @section Contact Module
      * @page Homepage Modules
      * @example {html}
-     * <section id="contact" class="module module--quarter module__contact">
-     *     <div class="module__lead row">
-     *         <h2 class="module__lead__header">Contact</h2>
-     *         <div class="module__lead__text col-md-8 col-md-offset-2">Thanks for stopping by!</div>
-     *     </div>
-     *     <div class="row">
-     *         <div class="col-md-offset-1 col-md-4">
-     *             <h4>Elsewhere On The Web</h4>
-     *             <ul class="hlist hlist--icon-list">
-     *                 <li>
-     *                     <a href="#"><i class="fab fa-github hlist__icon hlist__icon--x3"></i><span class="hlist__label--hidden">Github</span></a>
-     *                 </li>
-     *                 <li>
-     *                     <a href="#"><i class="fab fa-linkedin hlist__icon hlist__icon--x3"></i><span class="hlist__label--hidden">LinkedIn</span></a>
-     *                 </li>
-     *                 <li>
-     *                     <a href="#"><i class="fab fa-stack-overflow hlist__icon hlist__icon--x3"></i><span class="hlist__label--hidden">StackOverflow</span></a>
-     *                 </li>
-     *             </ul>
-     *         </div>
-     *         <div class="col-md-offset-2 col-md-4">
-     *             <h4>Available For Work</h4>
-     *             <p>Like what you see? I&apos;m currently open to new opportunities!</p>
-     *             <p>Let&apos;s get in touch.</p>
-     *         </div>
-     *     </div>
-     * </section>
+     <div class="container">
+         <section id="contact" class="row module module--quarter module__contact">
+             <div class="container">
+                 <div class="module__lead row">
+                     <h2 class="module__lead__header">Contact</h2>
+                     <div class="module__lead__text col-md-8 col-md-offset-2">Thanks for stopping by!</div>
+                 </div>
+                 <div class="row">
+                     <div class="col-md-offset-1 col-md-4">
+                         <h4>Elsewhere On The Web</h4>
+                         <ul class="hlist hlist--icon-list">
+                             <li>
+                                 <a href="#"><i class="fab fa-github hlist__icon hlist__icon--x3"></i><span class="hlist__label--hidden">Github</span></a>
+                             </li>
+                             <li>
+                                 <a href="#"><i class="fab fa-linkedin hlist__icon hlist__icon--x3"></i><span class="hlist__label--hidden">LinkedIn</span></a>
+                             </li>
+                             <li>
+                                 <a href="#"><i class="fab fa-stack-overflow hlist__icon hlist__icon--x3"></i><span class="hlist__label--hidden">StackOverflow</span></a>
+                             </li>
+                         </ul>
+                     </div>
+                     <div class="col-md-offset-2 col-md-4">
+                         <h4>Available For Work</h4>
+                         <p>Like what you see? I&apos;m currently open to new opportunities!</p>
+                         <p>Let&apos;s get in touch.</p>
+                     </div>
+                 </div>
+             </div>
+         </section>
+     </div>
+     * @code {html}
+     <section id="contact" class="row module module--quarter module__contact">
+         <div class="container">
+             <div class="module__lead row">
+                 <h2 class="module__lead__header">Contact</h2>
+                 <div class="module__lead__text col-md-8 col-md-offset-2">Thanks for stopping by!</div>
+             </div>
+             <div class="row">
+                 <div class="col-md-offset-1 col-md-4">
+                     <h4>Elsewhere On The Web</h4>
+                     <ul class="hlist hlist--icon-list">
+                         <li>
+                             <a href="#"><i class="fab fa-github hlist__icon hlist__icon--x3"></i><span class="hlist__label--hidden">Github</span></a>
+                         </li>
+                         <li>
+                             <a href="#"><i class="fab fa-linkedin hlist__icon hlist__icon--x3"></i><span class="hlist__label--hidden">LinkedIn</span></a>
+                         </li>
+                         <li>
+                             <a href="#"><i class="fab fa-stack-overflow hlist__icon hlist__icon--x3"></i><span class="hlist__label--hidden">StackOverflow</span></a>
+                         </li>
+                     </ul>
+                 </div>
+                 <div class="col-md-offset-2 col-md-4">
+                     <h4>Available For Work</h4>
+                     <p>Like what you see? I&apos;m currently open to new opportunities!</p>
+                     <p>Let&apos;s get in touch.</p>
+                 </div>
+             </div>
+         </div>
+     </section>
      */
     &__contact {
         background: tint($color-accent-07, 25) image-url('contact-bg.png') center 40px no-repeat;
