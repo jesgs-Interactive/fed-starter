@@ -28,7 +28,7 @@
 
         a {
             &:link {
-                color: $color-base-02;
+                color: shade($color-accent-01, 25%);
             }
         }
     }
@@ -53,8 +53,8 @@
        </header>
      */
     &--portfolio {
-        background-color: $color-base-2;
-        border-bottom: 20px solid mix($color-base-2, $color-base-0, 75);
+        background-color: $color-base-3;
+        border-bottom: 20px solid mix($color-base-3, $color-base-0, 75);
     }
     /**
      * Site header with blog modifier
@@ -73,10 +73,10 @@
      */
     &--blog {
         color: $color-base-3;
-        background-color: $color-base-02;
+        //background-color: $color-base-02;
 
         h1 {
-            color: $color-base-3;
+            color: shade($color-accent-01, 75%);
             margin-bottom: 0;
             line-height: 1.5;
         }
@@ -128,7 +128,7 @@
     height: 160px;
     @include box-sizing(border-box);
     color: $color-base-3;
-    background: $color-base-03 image-url('cars.png') bottom 0 right 20px no-repeat;
+    background: shade($color-accent-01, 75%) image-url('cars.png') bottom 0 right 20px no-repeat;
 
     small {
         display: block;

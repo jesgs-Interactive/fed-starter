@@ -1,32 +1,8 @@
 /**
- * Color Scheme is based on the Solarized color-scheme that is primarily used in IDEs and text-editors.
+ * Color Scheme
  * @section Colors
  * @page Colors
  */
-
-/**
- * Base Color 03
- * @color {#002b36} Base Color 03|$color-base-03 - Colors
- */
-$color-base-03: #002b36;
-
-/**
- * Base Color 02
- * @color {#073642} Base Color 02|$color-base-02 - Colors
- */
-$color-base-02: #073642;
-
-/**
- * Base Color 01
- * @color {#586e75} Base Color 01|$color-base-01 - Colors
- */
-$color-base-01: #586e75;
-
-/**
- * Base Color 00
- * @color {#657b83} Base Color 00|$color-base-00 - Colors
- */
-$color-base-00: #657b83;
 
 /**
  * Base Color 0
@@ -48,57 +24,27 @@ $color-base-2: #eee8d5;
 
 /**
  * Base Color 3
- * @color {#fdf6e3} Base Color 3|$color-base-3 - Colors
+ * @color {#f3f7ff} Base Color 3|$color-base-3 - Colors
  */
-$color-base-3: #fdf6e3;
+$color-base-3: #f3f7ff;
 
 /**
  * Accent Color 1
- * @color {#b58900} Accent Color 1|$color-accent-01 - Colors
+ * @color {#00a6ce} Accent Color 1|$color-accent-01 - Colors
  */
-$color-accent-01: #b58900;
+$color-accent-01: #00a6ce;
 
 /**
  * Accent Color 2
- * @color {#cb4b16} Accent Color 2|$color-accent-02 - Colors
+ * @color {#e2b322} Accent Color 2|$color-accent-02 - Colors
  */
-$color-accent-02: #cb4b16;
+$color-accent-02: #e2b322;
 
 /**
  * Accent Color 3
- * @color {#dc322f} Accent Color 3|$color-accent-03 - Colors
+ * @color {#00cc6f} Accent Color 3|$color-accent-03 - Colors
  */
-$color-accent-03: #dc322f;
-
-/**
- * Accent Color 4
- * @color {#d33682} Accent Color 4|$color-accent-04 - Colors
- */
-$color-accent-04: #d33682;
-
-/**
- * Accent Color 5
- * @color {#6c71c4} Accent Color 5|$color-accent-05 - Colors
- */
-$color-accent-05: #6c71c4;
-
-/**
- * Accent Color 6
- * @color {#268bd2} Accent Color 6|$color-accent-06 - Colors
- */
-$color-accent-06: #268bd2;
-
-/**
- * Accent Color 7
- * @color {#2aa198} Accent Color 7|$color-accent-07 - Colors
- */
-$color-accent-07: #2aa198;
-
-/**
- * Accent Color 8
- * @color {#859900} Accent Color 8|$color-accent-08 - Colors
- */
-$color-accent-08: #859900;
+$color-accent-03: #00cc6f;
 
 /**
  * Accent colors can be tinted with white using increments of 25%. Tinting is provided by the <code>tint</code>
@@ -122,29 +68,29 @@ $color-accent-08: #859900;
  */
 
 /**
- * Accent Color 6 25% tint
- * @color {#{tint($color-accent-06, 25)}} Accent Color 6 25% tint - Tints
+ * Accent Color 2 25% tint
+ * @color {#{tint($color-accent-02, 25)}} Accent Color 2 25% tint - Tints
  */
 /**
- * Accent Color 6 50% tint
- * @color {#{tint($color-accent-06, 50)}} Accent Color 6 50% tint - Tints
+ * Accent Color 2 50% tint
+ * @color {#{tint($color-accent-02, 50)}} Accent Color 2 50% tint - Tints
  */
 /**
- * Accent Color 6 75% tint
- * @color {#{tint($color-accent-06, 75)}} Accent Color 6 75% tint - Tints
+ * Accent Color 2 75% tint
+ * @color {#{tint($color-accent-02, 75)}} Accent Color 2 75% tint - Tints
  */
 
 /**
- * Accent Color 7 25% tint
- * @color {#{tint($color-accent-07, 25)}} Accent Color 7 25% tint - Tints
+ * Accent Color 3 25% tint
+ * @color {#{tint($color-accent-03, 25)}} Accent Color 3 25% tint - Tints
  */
 /**
- * Accent Color 7 50% tint
- * @color {#{tint($color-accent-07, 50)}} Accent Color 7 50% tint - Tints
+ * Accent Color 3 50% tint
+ * @color {#{tint($color-accent-03, 50)}} Accent Color 3 50% tint - Tints
  */
 /**
- * Accent Color 7 75% tint
- * @color {#{tint($color-accent-07, 75)}} Accent Color 7 75% tint - Tints
+ * Accent Color 3 75% tint
+ * @color {#{tint($color-accent-03, 75)}} Accent Color 3 75% tint - Tints
  */
 
 /**
@@ -169,30 +115,30 @@ $color-accent-08: #859900;
  */
 
 /**
- * Accent Color 6 25% shade
- * @color {#{shade($color-accent-06, 25)}} Accent Color 6 25% shade - Shades
+ * Accent Color 2 25% shade
+ * @color {#{shade($color-accent-02, 25)}} Accent Color 2 25% shade - Shades
  */
 /**
- * Accent Color 6 50% shade
- * @color {#{shade($color-accent-06, 50)}} Accent Color 6 50% shade - Shades
+ * Accent Color 2 50% shade
+ * @color {#{shade($color-accent-02, 50)}} Accent Color 2 50% shade - Shades
  */
 /**
- * Accent Color 6 75% shade
- * @color {#{shade($color-accent-06, 75)}} Accent Color 6 75% shade - Shades
+ * Accent Color 2 75% shade
+ * @color {#{shade($color-accent-02, 75)}} Accent Color 2 75% shade - Shades
  */
 
 /**
- * Accent Color 7 25% shade
- * @color {#{shade($color-accent-07, 25)}} Accent Color 7 25% shade - Shades
+ * Accent Color 3 25% shade
+ * @color {#{shade($color-accent-03, 25)}} Accent Color 3 25% shade - Shades
  */
 /**
- * Accent Color 7 50% shade
- * @color {#{shade($color-accent-07, 50)}} Accent Color 7 50% shade - Shades
+ * Accent Color 3 50% shade
+ * @color {#{shade($color-accent-03, 50)}} Accent Color 3 50% shade - Shades
  */
 /**
- * Accent Color 7 75% shade
- * @color {#{shade($color-accent-07, 75)}} Accent Color 7 75% shade - Shades
+ * Accent Color 3 75% shade
+ * @color {#{shade($color-accent-03, 75)}} Accent Color 3 75% shade - Shades
  */
 
 $background-color: $color-base-3;
-$text-color: $color-base-01;
+$text-color: shade($color-accent-01, 75);

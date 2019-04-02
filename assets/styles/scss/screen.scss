@@ -33,28 +33,28 @@ body {
  * @section Hyperlink Styles
  * @sectionof Global Styles
  * @page index
- * @color {#{$color-accent-06}} Normal link state - Global Styles.Hyperlink Styles
- * @color {#{$color-accent-07}} Visited link state - Global Styles.Hyperlink Styles
- * @color {#{$color-accent-01}} Hover link state - Global Styles.Hyperlink Styles
- * @color {#{$color-accent-04}} Active link state - Global Styles.Hyperlink Styles
+ * @color {#{tint($color-accent-01, 75%)}} Normal link state - Global Styles.Hyperlink Styles
+ * @color {#{shade($color-accent-02, 75%)}} Visited link state - Global Styles.Hyperlink Styles
+ * @color {#{tint($color-accent-03, 75%)}} Hover link state - Global Styles.Hyperlink Styles
+ * @color {#{tint($color-accent-02, 75%)}} Active link state - Global Styles.Hyperlink Styles
  */
 a {
     &:link {
-        color: $color-accent-06;
+        color: tint($color-accent-01, 25%);
         text-decoration: none;
     }
 
     &:visited {
-        color: $color-accent-07;
+        color: shade($color-accent-02, 75%);
     }
 
     &:hover {
-        color: $color-accent-01;
+        color: tint($color-accent-03, 75%);
         text-decoration: underline;
     }
 
     &:active {
-        color: $color-accent-04;
+        color: tint($color-accent-02, 75%);
     }
 }
 
@@ -91,7 +91,7 @@ h, .h {
         font-family: $header-font;
         font-weight: 900;
         line-height: 1;
-        color: $color-base-03;
+        color: shade($color-accent-01, 75%);
         margin: 0 0 0.5em;
     }
 
@@ -175,11 +175,11 @@ h, .h {
         a {
             &:link,
             &:visited {
-                color: $color-base-2;
+                color: $color-base-3;
             }
 
             &:hover {
-                color: $color-accent-07;
+                color: shade($color-base-3, 50%);
             }
         }
     }
@@ -192,7 +192,7 @@ h, .h {
                 flex: 1 100%;
                 margin-right: 10px;
                 content: "|";
-                color: $color-base-03;
+                color: $color-base-3;
             }
         }
     }
