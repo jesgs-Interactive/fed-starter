@@ -175,11 +175,11 @@ h, .h {
         a {
             &:link,
             &:visited {
-                color: $color-base-3;
+                color: $text-color;
             }
 
             &:hover {
-                color: shade($color-base-3, 50%);
+                color: tint($text-color, 50%);
             }
         }
     }

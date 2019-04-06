@@ -1,3 +1,23 @@
+@keyframes slideIn {
+    from {
+        top: -160px
+    }
+
+    to {
+        top: 0;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        top: 0
+    }
+
+    to {
+        top: -160px;
+    }
+}
+
 /**
  * Global Elements
  * @page Global Elements
@@ -8,7 +28,23 @@
     justify-content: flex-start;
     align-items: center;
     height: 160px;
+    position: absolute;
+    width: 100%;
+    top: -160px;
     @include box-sizing(border-box);
+
+    &.is-sticky {
+        position: fixed;
+        animation-duration: 1.5s;
+        animation-name: slideIn;
+        z-index: 9;
+        top: 0;
+    }
+
+    &.is-sticky--off {
+        animation-duration: 1.5s;
+        animation-name: slideOut;
+    }
 
     &__logo {
         width: 80px;
@@ -153,11 +189,13 @@
         font-weight: lighter;
 
         a {
-            &:link {
+            &:link,
+            &:visited {
                 color: $color-base-3;
             }
 
-            &:hover {
+            &:hover,
+            &:active {
                 color: tint($color-accent-01, 75);
             }
         }

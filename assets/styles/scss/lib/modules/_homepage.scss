@@ -7,7 +7,6 @@
 .module {
     min-height: 100vw;
     padding: 40px 0;
-    color: $color-base-3;
 
     &--collapsed {
         min-height: inherit;
@@ -76,7 +75,7 @@
         text-align: center;
         margin-bottom: 40px;
         &__text {
-            color: $color-base-3;
+            color: $text-color;
             &--intro {
                 color: $color-base-1;
             }
@@ -116,7 +115,7 @@
      </section>
      */
     &__work {
-        background: tint($color-accent-01, 25) image-url('work-bg.png') center 40px no-repeat;
+        background: tint($color-accent-01, 75) image-url('work-bg.png') center 40px no-repeat;
         border-bottom: 20px solid $color-accent-01;
     }
 
@@ -218,7 +217,7 @@
      </section>
      */
     &__contact {
-        background: tint($color-accent-03, 25) image-url('contact-bg.png') center 40px no-repeat;
-        border-bottom: 20px solid $color-accent-03;
+        background: tint($color-accent-04, 25) image-url('contact-bg.png') center 40px no-repeat;
+        border-bottom: 20px solid $color-accent-04;
     }
 }
