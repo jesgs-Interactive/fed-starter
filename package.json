@@ -1,5 +1,5 @@
 {
-    "name": "portfolio-html-v2",
+    "name": "fed-starter",
     "version": "2.0.0",
     "scripts": {
         "serve": "node_modules/http-server/bin/http-server -a localhost -p 8080"
