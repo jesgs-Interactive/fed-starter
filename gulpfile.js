@@ -1,12 +1,13 @@
 const gulp = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
-const cssmin = require('gulp-cssmin');
+const cssmin = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const livingcss = require('gulp-livingcss');
 const sassImage = require('gulp-sass-image');
-const bourbon = require("bourbon").includePaths;
-const normalize = require('node-normalize-scss').includePaths;
+const bourbon = require('bourbon').includePaths;
+const normalize = require('scss-resets').includePaths;
+const project = require('./package.json');
 
 const scssAssetPath = [
     'assets/styles/scss/**/*.scss',
@@ -47,7 +48,7 @@ gulp.task('styleguide', () => {
         .pipe(livingcss(`${destCssAssetPath}screen.css`, {
             loadcss: false,
             preprocess: function(context, template, Handlebars) {
-                context.title = 'JessGreen.io Style Guide';
+                context.title = `${project.title} v${project.version}`;
             },
             tags: {
                 color: function() {
