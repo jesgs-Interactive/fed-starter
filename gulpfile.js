@@ -5,9 +5,13 @@ const cssmin = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const livingcss = require('gulp-livingcss');
 const sassImage = require('gulp-sass-image');
+const template = require('gulp-nunjucks-render');
 const bourbon = require('bourbon').includePaths;
 const normalize = require('scss-resets').includePaths;
+const data = require('gulp-data');
+const copy = require('gulp-copy');
 const project = require('./package.json');
+const templateData = require('./static/templates/data.json');
 
 const scssAssetPath = [
     'assets/styles/scss/**/*.scss',
@@ -81,24 +85,23 @@ gulp.task('cssmin', () => {
         .pipe(gulp.dest(destCssAssetPath));
 });
 
-gulp.task('watch', () => {
-    gulp.watch(scssAssetPath, gulp.series('sass-image', 'sass', 'cssmin', 'styleguide'));
+gulp.task('render', () => {
+    return gulp.src('static/templates/*.nunjucks')
+        .pipe(data(templateData))
+        .pipe(template({
+            path: ['static/templates']
+        }))
+        .pipe(gulp.dest('static/html'))
 });
 
-gulp.task('compile', gulp.series('sass', 'cssmin', function(done) {
-    gulp.src('assets/images/*')
-        .pipe(gulp.dest('dist/assets/images'));
+gulp.task('copy', () => {
+    return gulp.src([
+        'assets/styles/screen.css',
+        'assets/images/*'
+    ])
+    .pipe(copy('static/html', {}));
+});
 
-    gulp.src('assets/styles/screen.css')
-        .pipe(gulp.dest('dist/assets/styles'));
-
-    gulp.src(['index.html'])
-        .pipe(gulp.dest('dist'));
-
-    done();
-}));
-
-gulp.task('deploy', () => {
-    return gulp.src('./dist/**/*')
-        .pipe(ghPages());
+gulp.task('watch', () => {
+    gulp.watch(scssAssetPath, gulp.series('sass-image', 'sass', 'cssmin', 'copy', 'render', 'styleguide'));
 });
