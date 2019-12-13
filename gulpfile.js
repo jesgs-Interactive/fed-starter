@@ -102,6 +102,25 @@ gulp.task('copy', () => {
     .pipe(copy('static/html', {}));
 });
 
+gulp.task('copy-styleguide', () => {
+    return gulp.src([
+        'assets/styles/screen.css',
+        'assets/images/*'
+    ])
+    .pipe(copy('styleguide', {}));
+});
+
 gulp.task('watch', () => {
-    gulp.watch(scssAssetPath, gulp.series('sass-image', 'sass', 'cssmin', 'copy', 'render', 'styleguide'));
+    gulp.watch(
+        scssAssetPath,
+        gulp.series(
+            'sass-image',
+            'sass',
+            'cssmin',
+            'copy',
+            'render',
+            'copy-styleguide',
+            'styleguide'
+        )
+    );
 });

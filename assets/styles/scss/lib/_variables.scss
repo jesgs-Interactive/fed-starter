@@ -24,6 +24,7 @@ $font-size-print-xs: $font-size-print-base * 0.75;
 /* Spacing */
 $vertical-spacing: 1.5em;
 $horizontal-spacing: 1.5em;
+$default-spacing-iterations: 10;
 
 /* Grid */
 $columns: 10 !default;

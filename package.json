@@ -3,7 +3,8 @@
     "title": "Project Title",
     "version": "2.0.0",
     "scripts": {
-        "serve": "node_modules/http-server/bin/http-server ./static/html -a localhost -p 8080"
+        "serve": "node_modules/http-server/bin/http-server ./static/html -a localhost -p 8080",
+        "serve-styleguide": "node_modules/http-server/bin/http-server ./styleguide -a localhost -p 8081"
     },
     "devDependencies": {
         "bourbon": "^6.0.0",

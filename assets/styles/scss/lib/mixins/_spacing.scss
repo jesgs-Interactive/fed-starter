@@ -1,0 +1,75 @@
+/**
+ * Spacing classes
+ * @section Spacing
+ * @page Structure
+ *
+ */
+/**
+ * @sectionof Spacing
+ * @page Structure
+ * @example
+ * <p>Class for margins targeting large screens:<br/>
+ * <code>.vm__lg--bottom-1</code><br />
+ * <code>.vm__lg--top-1</code><br />
+ * <code>.vm__lg--left-1</code><br />
+ * <code>.vm__lg--right-1</code><br />
+ * </p>
+ * <p>For padding:<br />
+ * <code>.vp__lg--bottom-1</code><br />
+ * <code>.vp__lg--top-1</code><br />
+ * <code>.vp__lg--left-1</code><br />
+ * <code>.vp__lg--right-1</code><br />
+ * </p>
+ *
+ * @code {css}
+ * Size 1 to #{$default-spacing-iterations} represents an increment of #{$vertical-spacing}.
+ * .vm__{breakpoint}--{direction}-{size}
+ * .vp__{breakpoint}--{direction}-{size}
+ */
+@mixin make-spacing-classes(
+    $sub-class,
+    $factor: 1,
+    $spacing-iterations: $default-spacing-iterations
+) {
+    @if ($sub-class != "") {
+        $sub-class: __#{$sub-class};
+    }
+
+    @for $size from 1 through $spacing-iterations {
+        .vm#{$sub-class}--#{$size} {
+            margin: ($vertical-spacing * $size) 0;
+        }
+
+        .vp#{$sub-class}--#{$size} {
+            padding: ($vertical-spacing * $size) 0;
+        }
+
+        @each $direction in "bottom", "top", "left", "right" {
+            $spacing: $vertical-spacing;
+            @if ($direction == "left", "right") {
+                $spacing: $horizontal-spacing;
+            }
+            .vm#{$sub-class}--#{$direction}-#{$size} {
+                margin-#{$direction}: $spacing * $size;
+            }
+
+            .vp#{$sub-class}--#{$direction}-#{$size} {
+                padding-#{$direction}: ($spacing * $size);
+            }
+        }
+    }
+}
+
+@include make-spacing-classes("xs");
+
+@media (min-width: $small-screen-min) {
+    @include make-spacing-classes("sm");
+}
+
+@media (min-width: $medium-screen-min) {
+    @include make-spacing-classes("md");
+}
+
+@media (min-width: $large-screen-min) {
+    @include make-spacing-classes("lg");
+}
