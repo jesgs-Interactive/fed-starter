@@ -28,6 +28,12 @@
     }
 }
 
+@mixin media-xlg-min {
+    @media only screen and (min-width: $xlarge-screen-min) {
+        @content;
+    }
+}
+
 @mixin media-xxs-max {
     @media only screen and (max-width: $xxsmall-screen-max) {
         @content;
@@ -83,7 +89,13 @@
 }
 
 @mixin media-lg {
-    @include media-lg-min {
+    @media only screen and (min-width: $large-screen-min) and (max-width: $large-screen-max) {
+        @content;
+    }
+}
+
+@mixin media-xlg {
+    @media only screen and (min-width: $xlarge-screen-min) {
         @content;
     }
 }

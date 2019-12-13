@@ -1,0 +1,262 @@
+
+/**
+ * @section Utility Classes
+ * @page index
+ */
+/**
+ * Horizontal list classes
+ *
+ * @section Horizontal list classes
+ * @sectionof Utility Classes
+ * @page index
+ *
+ * @example
+ * <ul class="hlist">
+ *  <li>Item 1</li>
+ *  <li>Item 2</li>
+ * </ul>
+ *
+ * @code {html}
+ * <ul class="hlist">
+ *  <li>Item 1</li>
+ *  <li>Item 2</li>
+ * </ul>
+ */
+/**
+ * @section Horizontal list class w/ divider
+ * @sectionof Utility Classes
+ * @page index
+ * @example
+ * <ul class="hlist hlist--nav">
+ *  <li>Item 1</li>
+ *  <li>Item 2</li>
+ *  <li>Item 3</li>
+ *  <li>Item 4</li>
+ * </ul>
+ */
+.hlist {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    flex: 1 100%;
+  }
+
+  &--inline {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+      flex: none; // disable flex
+      display: inline-block;
+    }
+  }
+
+  &--categories {
+    &:before {
+      content: "\f07c";
+      display: inline-block;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+
+    li:not(:last-of-type) {
+      &:after {
+        content: ', ';
+        display: inline-block;
+      }
+    }
+
+    .categories {
+      list-style: none;
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+      > li {
+        display: inline-block;
+      }
+    }
+  }
+
+  &--icon-list {
+    a {
+      &:link,
+      &:visited {
+        color: $text-color;
+      }
+
+      &:hover {
+        color: tint($text-color, 50%);
+      }
+    }
+  }
+
+  &--nav {
+    > li + li {
+      margin-left: $horizontal-spacing;
+    }
+  }
+
+  &__icon {
+    margin-right: 5px;
+    vertical-align: middle;
+    &--normal {
+      font-size: 24px;
+    }
+
+    &--x2 {
+      font-size: 48px;
+    }
+
+    &--x3 {
+      font-size: 72px;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    vertical-align: middle;
+    &--hidden {
+      display: none;
+    }
+  }
+}
+
+/**
+ * Screen-reader only class. Use to hide text from browsers but not screen-readers
+ * @sectionof Utility Classes
+ * @section Screen-reader only Class
+ * @page index
+ * @example
+ *  .sr-only
+ *  .screen-reader-text
+ * @code {html}
+ *  <span class="sr-only">Hidden text</span>
+ *  <span class="screen-reader-text">Hidden text</span>
+ */
+.sr-only,
+.screen-reader-text {
+  display: none;
+}
+
+/**
+ * Centering classes
+ * @sectionof Utility Classes
+ * @section Centering classes
+ * @page index
+ */
+.text-center {
+  text-align: center;
+}
+
+.block-center {
+  display: block;
+  margin: 0 auto;
+}
+
+/**
+ * Pull-classes. Use to "pull" containers to left or right without using col-* classes. Wrap the
+ * two columns in a container using the <code>.row</code> class to clear floats.
+ * @section Pull classes
+ * @page index
+ * @example
+ * <div class="container">
+ *  Not pulled
+ * </div>
+ * <div class="container">
+ *  <div class="row">
+ *      <div class="pull-left">Pulled left</div>
+ *      <div class="pull-right">Pulled right</div>
+ *  </div>
+ * </div>
+ * @code {html}
+ *  <div class="container">
+ *  Not pulled
+ *      <div class="pull-left">Pulled left</div>
+ *      <div class="pull-right">Pulled right</div>
+ *  </div>
+ */
+.pull {
+  &-left {
+    float: left !important;
+  }
+
+  &-right {
+    float: right !important;
+  }
+}
+
+/**
+ * Visibility classes
+ * @section Visibility classes
+ * @page index
+ * @example
+ * <div class="container">
+ *     Resize the screen to see these examples in action
+ *     <div class="visible-xxs">0. Only visible on screen sizes smaller than #{$xxsmall-screen-max}</div>
+ *     <div class="visible-xs">1. Only visible on screen sizes between #{$xsmall-screen-min} and #{$xsmall-screen-max}</div>
+ *     <div class="visible-sm">2. Only visible on screen sizes between #{$small-screen-min} and #{$small-screen-max}</div>
+ *     <div class="visible-md">3. Only visible on screen sizes between #{$medium-screen-min} and #{$medium-screen-max}</div>
+ *     <div class="visible-lg">4. Only visible on screen sizes larger than #{$large-screen-min} and #{$large-screen-max}</div>
+ *     <div class="visible-xlg">5. Only visible on screen sizes larger than #{$xlarge-screen-min}</div>
+ * </div>
+ * @code {html}
+ * <div class="container">
+ *     <div class="visible-xxs">0. Only visible on screen sizes smaller than #{$xxsmall-screen-max}</div>
+ *     <div class="visible-xs">1. Only visible on screen sizes between #{$xsmall-screen-min} and #{$xsmall-screen-max}</div>
+ *     <div class="visible-sm">2. Only visible on screen sizes between #{$small-screen-min} and #{$small-screen-max}</div>
+ *     <div class="visible-lg">4. Only visible on screen sizes larger than #{$large-screen-min} and #{$large-screen-max}</div>
+ *     <div class="visible-xlg">5. Only visible on screen sizes larger than #{$xlarge-screen-min}</div>
+ * </div>
+ */
+/* visible/invisible classes */
+.visible-xxs,
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg,
+.visible-xlg {
+  display: none !important;
+}
+
+.visible-xxs {
+  @media (max-width: $xxsmall-screen-max) {
+    display: block !important;
+  }
+}
+
+.visible-xs {
+  @include media-xs {
+    display: block !important;
+  }
+}
+
+.visible-sm {
+  @include media-sm {
+    display: block !important;
+  }
+}
+
+.visible-md {
+  @include media-md {
+    display: block !important;
+  }
+}
+
+.visible-lg {
+  @include media-lg {
+    display: block !important;
+  }
+}
+
+.visible-xlg {
+  @include media-xlg {
+    display: block !important;
+  }
+}

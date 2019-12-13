@@ -1,16 +1,17 @@
 /* Fonts */
-$base-font: "open-sans", sans-serif;
+$base-font: 'Montserrat', sans-serif;
 $header-font: $base-font;
-$logo-font: "kinescope", sans-serif;
-$code-font: "source-code-pro", monospace;
+$logo-font: $base-font;
+$code-font: monospace;
 
 /* Font Sizes */
-$font-size-base: 18px;
-$font-size-xxl: $font-size-base * 3;
-$font-size-xl: $font-size-base * 2.5;
-$font-size-l: $font-size-base * 2;
-$font-size-sm: $font-size-base * 0.875;
-$font-size-xs: $font-size-base * 0.75;
+$font-size-base: 62.5%;
+$font-size-xxl: 3.5rem;
+$font-size-xl: 3rem;
+$font-size-l: 2rem;
+$font-size-normal: 1.6rem;
+$font-size-sm: 0.875rem;
+$font-size-xs: 0.75rem;
 
 $font-size-print-base: 10pt;
 $font-size-print-xxl: $font-size-print-base * 3;
@@ -21,18 +22,19 @@ $font-size-print-xs: $font-size-print-base * 0.75;
 
 
 /* Spacing */
-$vertical-spacing: 15px;
-$horizontal-spacing: 15px;
+$vertical-spacing: 1.5em;
+$horizontal-spacing: 1.5em;
 
 /* Grid */
-$columns: 12 !default;
+$columns: 10 !default;
 
 /* Breakpoint variables */
-$xxsmall-screen-min: 320px !default;
-$xsmall-screen-min: 480px !default;
-$small-screen-min: 768px !default;
-$medium-screen-min: 992px !default;
-$large-screen-min: 1200px !default;
+$xxsmall-screen-min: 20em !default;
+$xsmall-screen-min: 30em !default;
+$small-screen-min: 48em !default;
+$medium-screen-min: 62em !default;
+$large-screen-min: 75em !default;
+$xlarge-screen-min: 120px !default;
 
 /* 479px */
 /* 767px */
@@ -42,6 +44,7 @@ $xxsmall-screen-max: $xsmall-screen-min - 1 !default;
 $xsmall-screen-max: $small-screen-min - 1 !default;
 $small-screen-max: $medium-screen-min - 1 !default;
 $medium-screen-max: $large-screen-min - 1 !default;
+$large-screen-max: $xlarge-screen-min - 1 !default;
 
 /* misc variables */
 $header-height: 0px;

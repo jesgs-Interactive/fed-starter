@@ -1,45 +1,81 @@
-@mixin make-vertical-spacing-classes(
+/**
+ * Vertical spacing classes
+ * @section Vertical Spacing
+ * @page Structure
+ */
+@mixin make-spacing-classes(
     $sub-class,
     $factor: 1,
-    $vertical-spacing-iterations: 10
+    $spacing-iterations: 10
 ) {
-    @for $size from 1 through $vertical-spacing-iterations {
-        @each $direction in "bottom", "top" {
-            @if ($factor == 1) {
-                .vm__#{$sub-class}--#{$direction}-#{$size} {
-                    margin-#{$direction}: $vertical-spacing * $size;
-                }
+    @if ($sub-class != "") {
+        $sub-class: __#{$sub-class};
+    }
 
-                .vp__#{$sub-class}--#{$direction}-#{$size} {
-                    padding-#{$direction}: ($vertical-spacing * $size) * $factor;
-                }
-            } @else {
-                .vm__#{$sub-class}--#{$direction}-x#{$factor}-#{$size} {
-                    margin-#{$direction}: ($vertical-spacing * $size) * $factor;
-                }
+    @for $size from 1 through $spacing-iterations {
 
-                .vp__#{$sub-class}--#{$direction}-x#{$factor}-#{$size} {
-                    padding-#{$direction}: ($vertical-spacing * $size) * $factor;
-                }
+        /**
+         * @sectionof Vertical Spacing
+         * @page Structure
+         * @example
+         *
+         * @code {css}
+         *  .vm#{$sub-class}--#{$size}
+         */
+        .vm#{$sub-class}--#{$size} {
+            margin: ($vertical-spacing * $size) 0;
+        }
+
+        /**
+         * @sectionof Vertical Spacing
+         * @page Structure
+         * @example
+         *
+         * @code {css}
+         *  .vp#{$sub-class}--#{$size}
+         */
+        .vp#{$sub-class}--#{$size} {
+            padding: ($vertical-spacing * $size) 0;
+        }
+
+        @each $direction in "bottom", "top", "left", "right" {
+            /**
+             * @sectionof Vertical Spacing
+             * @page Structure
+             * @example
+             *
+             * @code {css}
+             *  .vm#{$sub-class}--#{$direction}-#{$size}
+             */
+            .vm#{$sub-class}--#{$direction}-#{$size} {
+                margin-#{$direction}: $vertical-spacing * $size;
+            }
+
+            /**
+             * @sectionof Vertical Spacing
+             * @page Structure
+             * @example
+             *
+             * @code {css}
+             *  .vp#{$sub-class}--#{$direction}-#{$size}
+             */
+            .vp#{$sub-class}--#{$direction}-#{$size} {
+                padding-#{$direction}: ($vertical-spacing * $size);
             }
         }
     }
 }
 
-@include make-vertical-spacing-classes("xs");
-@include make-vertical-spacing-classes("xs", 10, 5);
+@include make-spacing-classes("xs");
 
 @media (min-width: $small-screen-min) {
-    @include make-vertical-spacing-classes("sm");
-    @include make-vertical-spacing-classes("sm", 10, 5);
+    @include make-spacing-classes("sm");
 }
 
 @media (min-width: $medium-screen-min) {
-    @include make-vertical-spacing-classes("md");
-    @include make-vertical-spacing-classes("md", 10, 5);
+    @include make-spacing-classes("md");
 }
 
 @media (min-width: $large-screen-min) {
-    @include make-vertical-spacing-classes("lg");
-    @include make-vertical-spacing-classes("lg", 10, 5);
+    @include make-spacing-classes("lg");
 }

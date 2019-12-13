@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,700,700i&display=swap');
 @import "normalize";
 @import "bourbon";
 @import "lib/index";
+
 /**
  * Global Styling
  * @section Global Styles
@@ -9,11 +11,17 @@
 html {
     margin: 0;
     padding: 0;
+    font-size: $font-size-base;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
 }
 
 /**
  * Base font size: #{$font-size-base}<br />
- * Base font face: Open Sans "#{$base-font}"
+ * Base font face: #{$base-font}
  * @section Body Styles
  * @sectionof Global Styles
  * @page index
@@ -21,8 +29,9 @@ html {
  * @color {#{$text-color}} Text/Foreground color - Global Styles.Body Styles
  */
 body {
-    font: $font-size-base $base-font;
+    font: $font-size-normal $base-font;
     line-height: 1.5;
+    font-weight: 300;
     background-color: $background-color;
     color: $text-color;
     margin: 0;
@@ -34,28 +43,28 @@ body {
  * @section Hyperlink Styles
  * @sectionof Global Styles
  * @page index
- * @color {#{tint($color-accent-01, 75%)}} Normal link state - Global Styles.Hyperlink Styles
- * @color {#{shade($color-accent-02, 75%)}} Visited link state - Global Styles.Hyperlink Styles
- * @color {#{tint($color-accent-03, 75%)}} Hover link state - Global Styles.Hyperlink Styles
- * @color {#{tint($color-accent-02, 75%)}} Active link state - Global Styles.Hyperlink Styles
+ * @color {#{tint($color-base-0, 25%)}} Normal link state - Global Styles.Hyperlink Styles
+ * @color {#{shade($color-base-0, 75%)}} Visited link state - Global Styles.Hyperlink Styles
+ * @color {#{tint($color-base-1, 75%)}} Hover link state - Global Styles.Hyperlink Styles
+ * @color {#{tint($color-base-1, 75%)}} Active link state - Global Styles.Hyperlink Styles
  */
 a {
     &:link {
-        color: tint($color-accent-01, 25%);
+        color: tint($color-base-0, 25%);
         text-decoration: none;
     }
 
     &:visited {
-        color: shade($color-accent-02, 75%);
+        color: shade($color-base-0, 75%);
     }
 
     &:hover {
-        color: tint($color-accent-03, 75%);
+        color: tint($color-base-1, 75%);
         text-decoration: underline;
     }
 
     &:active {
-        color: tint($color-accent-02, 75%);
+        color: tint($color-base-1, 75%);
     }
 }
 
@@ -63,7 +72,7 @@ a {
  * Heading styles
  *
  * All HTML headings, `<h1>` through `<h6>`, are available. `.h1` through `.h6` classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.
- *
+ * @color {#{$color-base-0}} Header color — Heading Styles
  * @section Heading Styles
  * @page index
  * @example
@@ -90,9 +99,10 @@ a {
 h, .h {
     &1, &2, &3, &4, &5, &6 {
         font-family: $header-font;
-        font-weight: 900;
+        font-weight: 700;
+        text-transform: uppercase;
         line-height: 1;
-        color: shade($color-accent-01, 75%);
+        color: $color-base-0;
         margin: 0 0 0.5em;
     }
 
@@ -106,11 +116,10 @@ h, .h {
 
     &3 {
         font-size: $font-size-l;
-        margin-bottom: 20px;
     }
 
     &4 {
-        font-size: $font-size-base;
+        font-size: $font-size-normal;
     }
 
     &5 {
@@ -127,209 +136,6 @@ h, .h {
     }
 }
 
-/**
- * @section Utility Classes
- * @page index
- */
-/**
- * Horizontal list classes
- *
- * @section Horizontal list classes
- * @sectionof Utility Classes
- * @page index
- *
- * @example
- * <ul class="hlist">
- *  <li>Item 1</li>
- *  <li>Item 2</li>
- * </ul>
- *
- * @code {html}
- * <ul class="hlist">
- *  <li>Item 1</li>
- *  <li>Item 2</li>
- * </ul>
- */
-/**
- * @section Horizontal list class w/ divider
- * @sectionof Utility Classes
- * @page index
- * @example
- * <ul class="hlist hlist--nav">
- *  <li>Item 1</li>
- *  <li>Item 2</li>
- *  <li>Item 3</li>
- *  <li>Item 4</li>
- * </ul>
- */
-.hlist {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    > li {
-        flex: 1 100%;
-    }
-    &--icon-list {
-        a {
-            &:link,
-            &:visited {
-                color: $text-color;
-            }
-
-            &:hover {
-                color: tint($text-color, 50%);
-            }
-        }
-    }
-
-    &--nav {
-        > li + li {
-            margin-left: 10px;
-
-            &:before {
-                flex: 1 100%;
-                margin-right: 10px;
-                content: "|";
-                color: $color-base-3;
-            }
-        }
-    }
-
-    &__icon {
-        margin-right: 5px;
-        vertical-align: middle;
-        &--normal {
-            font-size: 24px;
-        }
-
-        &--x2 {
-            font-size: 48px;
-        }
-
-        &--x3 {
-            font-size: 72px;
-        }
-    }
-
-    &__label {
-        display: inline-block;
-        vertical-align: middle;
-        &--hidden {
-            display: none;
-        }
-    }
-}
-
-/**
- * Screen-reader only class. Use to hide text from browsers but not screen-readers
- * @sectionof Utility Classes
- * @section Screen-reader only Class
- * @page index
- * @example
- *  .sr-only
- * @code {html}
- *  <span class="sr-only">Hidden text</span>
- */
-.sr-only {
-    display: none;
-}
-
-/**
- * Pull-classes. Use to "pull" containers to left or right without using col-* classes. Wrap the
- * two columns in a container using the <code>.row</code> class to clear floats.
- * @section Pull classes
- * @page index
- * @example
- * <div class="container">
- *  Not pulled
- * </div>
- * <div class="container">
- *  <div class="row">
- *      <div class="pull-left">Pulled left</div>
- *      <div class="pull-right">Pulled right</div>
- *  </div>
- * </div>
- * @code {html}
- *  <div class="container">
- *  Not pulled
- *      <div class="pull-left">Pulled left</div>
- *      <div class="pull-right">Pulled right</div>
- *  </div>
- */
-.pull {
-    &-left {
-        float: left !important;
-    }
-
-    &-right {
-        float: right !important;
-    }
-}
-
-/**
- * Visibility classes
- * @section Visibility classes
- * @page index
- * @example
- * <div class="container">
- *     Resize the screen to see these examples in action
- *     <div class="visible-xxs">0. Only visible on screen sizes smaller than #{$xxsmall-screen-max}</div>
- *     <div class="visible-xs">1. Only visible on screen sizes between #{$xsmall-screen-min} and #{$xsmall-screen-max}</div>
- *     <div class="visible-sm">2. Only visible on screen sizes between #{$small-screen-min} and #{$small-screen-max}</div>
- *     <div class="visible-md">3. Only visible on screen sizes between #{$medium-screen-min} and #{$medium-screen-max}</div>
- *     <div class="visible-lg">4. Only visible on screen sizes larger than #{$large-screen-min}</div>
- * </div>
- * @code {html}
- * <div class="container">
- *     <div class="visible-xxs">0. Only visible on screen sizes smaller than #{$xxsmall-screen-max}</div>
- *     <div class="visible-xs">1. Only visible on screen sizes between #{$xsmall-screen-min} and #{$xsmall-screen-max}</div>
- *     <div class="visible-sm">2. Only visible on screen sizes between #{$small-screen-min} and #{$small-screen-max}</div>
- *     <div class="visible-md">3. Only visible on screen sizes between #{$medium-screen-min} and #{$medium-screen-max}</div>
- *     <div class="visible-lg">4. Only visible on screen sizes larger than #{$large-screen-min}</div>
- * </div>
- */
-/* visible/invisible classes */
-.visible-xxs,
-.visible-xs,
-.visible-sm,
-.visible-md,
-.visible-lg {
-    display: none !important;
-}
-
-.visible-xxs {
-    @media (max-width: 479px) {
-        display: block !important;
-    }
-}
-
-.visible-xs {
-    @media (min-width: 480px) and (max-width: 767px) {
-        display: block !important;
-    }
-}
-
-.visible-sm {
-    @media (min-width: 768px) and (max-width: 991px) {
-        display: block !important;
-    }
-}
-
-.visible-md {
-    @media (min-width: 992px) and (max-width: 1199px) {
-        display: block !important;
-    }
-}
-
-.visible-lg {
-    @media (min-width: 1200px) {
-        display: block !important;
-    }
-}
-
 strong {
     font-weight: bold;
 }
@@ -339,5 +145,21 @@ cite, em {
 }
 
 code, pre {
-    font: $font-size-base $code-font;
+    font: $font-size-normal $code-font;
+}
+
+input {
+    &[type=url],
+    &[type=email],
+    &[type=text] {
+        border: 1px solid;
+    }
+}
+
+textarea {
+    border: 1px solid;
+}
+
+input[type=checkbox] {
+    margin-right: 15px;
 }
